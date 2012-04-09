@@ -2,12 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
-#gem 'pg'
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -17,21 +11,9 @@ group :assets do
 end
 
 group :test do
-  gem "selenium-webdriver", "~> 2.13.0" # 支持travis-ci的firefox8.0版本
+  #gem "selenium-webdriver", "~> 2.13.0" # 支持travis-ci的firefox8.0版本
+  gem "selenium-webdriver", "~> 2.15.0" # 支持travis-ci的firefox11.0版本
   gem "rspec-rails"
   gem 'capybara'
   gem 'therubyracer', require: nil unless ENV['TRAVIS']
 end
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
