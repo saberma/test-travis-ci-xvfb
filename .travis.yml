@@ -1,0 +1,11 @@
+bundler_args: --without development
+
+rvm: 1.9.3
+
+before_script: sh -e /etc/init.d/xvfb start
+
+#env: RAILS_ENV=travis
+
+script:
+  - "firefox --version"
+  - "DISPLAY=:99.0 bundle exec rspec spec/requests"
