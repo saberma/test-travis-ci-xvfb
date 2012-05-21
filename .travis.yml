@@ -17,5 +17,7 @@ before_script: sh -e /etc/init.d/xvfb start
 #env: RAILS_ENV=travis
 
 script:
-- "firefox --version"
-- "DISPLAY=:99.0 bundle exec rspec spec/requests"
+  - "firefox --version"
+  - "cp config/database.yml.example config/database.yml 2>&1"
+  - "bundle exec rake db:drop db:create db:schema:load --trace"
+  - "DISPLAY=:99.0 bundle exec rspec spec/requests"
