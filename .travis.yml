@@ -1,20 +1,19 @@
 bundler_args: --without development
 
-rvm:
-  - 1.8.7
-  - 1.9.2
-  - 1.9.3
-  - jruby-18mode
-  - jruby-19mode
-  - rbx-18mode
-  - rbx-19mode
-  - ruby-head
-  - jruby-head
-  - ree
+rvm: 1.9.3
 
 before_script: sh -e /etc/init.d/xvfb start
 
-#env: RAILS_ENV=travis
+env:
+  TEST=1
+  TEST=2
+  TEST=3
+  TEST=4
+  TEST=5
+  TEST=6
+  TEST=7
+  TEST=8
+  TEST=9
 
 script:
   - "firefox --version"
