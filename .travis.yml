@@ -1,10 +1,9 @@
-bundler_args: --without development
-
 rvm: 1.9.3
 
 before_script:
  - sudo apt-get update
  - sudo apt-get install python-pygments
+ - bundle install --without development
  - sh -e /etc/init.d/xvfb start
 
 env:
