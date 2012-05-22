@@ -1,10 +1,8 @@
+bundler_args: --without development
+
 rvm: 1.9.3
 
-before_script:
- - sudo apt-get update
- - sudo apt-get install libpython2.7 python-pygments
- - bundle install --without development
- - sh -e /etc/init.d/xvfb start
+before_script: sh -e /etc/init.d/xvfb start
 
 env:
   - TEST=1
@@ -19,5 +17,7 @@ env:
 
 script:
   - "firefox --version"
+  - "ruby -e \"require 'ffi'; puts FFI\""
+  - "bundle exec ruby -e \"require 'ffi'; puts FFI\""
   - "bundle exec rake db:drop db:create db:schema:load --trace"
   - "DISPLAY=:99.0 bundle exec rspec spec/requests"
