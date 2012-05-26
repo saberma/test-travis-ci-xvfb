@@ -2,9 +2,9 @@ bundler_args: --without development
 
 rvm: 1.9.3
 
-before_script: 
-  - gem uninstall ffi -a
-  - sh -e /etc/init.d/xvfb start
+before_install: gem uninstall ffi -a
+
+before_script: sh -e /etc/init.d/xvfb start
 
 env:
   - TEST=1
