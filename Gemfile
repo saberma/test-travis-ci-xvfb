@@ -14,7 +14,8 @@ end
 
 group :test do
   #gem "selenium-webdriver", "~> 2.13.0" # 支持travis-ci的firefox8.0版本
-  gem "selenium-webdriver", "~> 2.15.0" # 支持travis-ci的firefox11.0版本
+  #gem "selenium-webdriver", "~> 2.15.0" # 支持travis-ci的firefox11.0版本
+  gem "selenium-webdriver", "~> 2.24.0" # 支持travis-ci的firefox13.0版本
   gem "rspec-rails"
   gem 'capybara'
   gem 'therubyracer', require: nil unless ENV['TRAVIS']
